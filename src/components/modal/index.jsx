@@ -29,7 +29,7 @@ const DetailModal = ({ closeModal }) => {
               <p>Current Price:</p>
               <p>$123</p>
             </div>
-            <button className="mt-4 p-2 px-5 mx-auto text-blue-900 border-2 border-blue-900 uppercase">
+            <button className="mt-4 p-2 px-5 mx-auto dark:text-white dark:bg-blue-900 text-blue-900 border-2 border-blue-900 uppercase">
               Buy Now
             </button>
           </div>

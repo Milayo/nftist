@@ -1,8 +1,9 @@
-import './App.css';
-import NFTCard from './components/card';
-import CardsSection from './components/cards';
-import HeroSection from './components/herosection';
-import Layout from './components/layouts';
+import "./App.css";
+import NFTCard from "./components/card";
+import CardsSection from "./components/cards";
+import FetchNfts from "./components/fetchNfts";
+import HeroSection from "./components/herosection";
+import Layout from "./components/layouts";
 
 function App() {
   return (
@@ -10,9 +11,10 @@ function App() {
       <Layout>
         <div>
           {/* <HeroSection/> */}
-          <CardsSection/>
+          <CardsSection />
+          <FetchNfts />
         </div>
-        </Layout>
+      </Layout>
     </div>
   );
 }
