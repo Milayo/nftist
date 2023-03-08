@@ -20,14 +20,6 @@ const FetchNfts = () => {
 
   const fetchUrl = `https://eth-mainnet.g.alchemy.com/nft/v2/${process.env.REACT_APP_API_KEY}/getNFTsForCollection?contractAddress=${address}&withMetadata=true&limit=12`;
 
-  // console.log(
-  //   `https://eth-mainnet.g.alchemy.com/nft/v2/${
-  //     process.env.REACT_APP_API_KEY
-  //   }/getNFTsForCollection?contractAddress=${add.trim()}&withMetadata=true&limit=12`
-  // );
-
-  // const address = "0xf7479f9527c57167caff6386daa588b7bf05727f";
-
   const fetchData = async () => {
     setLoading(true);
 
@@ -58,7 +50,7 @@ const FetchNfts = () => {
 
         AllNfts = [...AllNfts, nft];
       }
-      console.log(AllNfts);
+
       setNfts(AllNfts);
       setLoading(false);
     } catch (error) {

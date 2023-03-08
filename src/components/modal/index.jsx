@@ -22,11 +22,9 @@ const DetailModal = ({
   const tokenInDec = parseInt(token, 16);
   const [searchParams] = useSearchParams();
   const address = searchParams.get("contractAddress");
-  console.log(address);
 
   const NftUrl = `https://opensea.io/assets/ethereum/${address}/${tokenInDec}`;
-  console.log(address);
-  console.log(NftUrl);
+
   return (
     <div class="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-gray-900 bg-opacity-50 h-screen">
       <div class="bg-white rounded-lg shadow-lg overflow-auto max-w-4xl w-5/6 relative h-3/5 xs:h-3/4">
