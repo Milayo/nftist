@@ -33,6 +33,7 @@ const SearchBar = () => {
         name="search"
         value={contractAddress}
         onChange={handleSearch}
+        autocomplete="off"
         placeholder="Enter Contract Address"
         onKeyDown={handleKeyPress}
       />
