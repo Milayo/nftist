@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Alchemy, Network, Nft } from "alchemy-sdk";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useSearchParams } from "react-router-dom";
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -16,7 +17,16 @@ const DetailModal = ({
   image,
   description,
   title,
+  token,
 }) => {
+  const tokenInDec = parseInt(token, 16);
+  const [searchParams] = useSearchParams();
+  const address = searchParams.get("contractAddress");
+  console.log(address);
+
+  const NftUrl = `https://opensea.io/assets/ethereum/${address}/${tokenInDec}`;
+  console.log(address);
+  console.log(NftUrl);
   return (
     <div class="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-gray-900 bg-opacity-50 h-screen">
       <div class="bg-white rounded-lg shadow-lg overflow-auto max-w-4xl w-5/6 relative h-3/5 xs:h-3/4">
@@ -37,9 +47,12 @@ const DetailModal = ({
               <p>Floor Price:</p>
               <p>{price} ETH</p>
             </div>
-            <button className="mt-4 p-2 px-5 mx-auto dark:text-white dark:bg-blue-900 text-blue-900 border-2 border-blue-900 uppercase">
-              Buy Now
-            </button>
+
+            <a href={NftUrl} target="_blank">
+              <button className="mt-4 p-2 px-5 mx-auto dark:text-white dark:bg-blue-900 text-blue-900 border-2 border-blue-900 uppercase">
+                Buy Now
+              </button>
+            </a>
           </div>
         </div>
       </div>

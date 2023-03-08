@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import DetailModal from "../modal";
 
-const NFTCard = ({ image, price, title, owner, description }) => {
+const NFTCard = ({
+  image,
+  price,
+  title,
+  owner,
+  token,
+  description,
+  collectionUrl,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -52,7 +60,9 @@ const NFTCard = ({ image, price, title, owner, description }) => {
           owner={owner}
           price={price}
           image={image}
+          token={token}
           description={description}
+          collectionUrl={collectionUrl}
           title={title}
         />
       )}
